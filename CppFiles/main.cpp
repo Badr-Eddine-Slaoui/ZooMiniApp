@@ -1,4 +1,5 @@
 #include <iostream>
+#include "../HppFiles/globalVariables.hpp"
 
 
 int main() {
