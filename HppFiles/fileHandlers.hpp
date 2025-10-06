@@ -2,8 +2,8 @@
 #define FILEHANDLERS_HPP
 #include "structs.hpp"
 
-void saveToFile(const Animal *arr);
+void saveToFile(const Animal arr[]);
 
-void loadFromFile(Animal **arr);
+void loadFromFile(Animal arr[]);
 
 #endif
