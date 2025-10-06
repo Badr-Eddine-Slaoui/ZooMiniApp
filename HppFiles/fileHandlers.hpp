@@ -7,4 +7,6 @@ void saveToFile(const vector<Animal> &arr);
 
 void loadFromFile(vector<Animal> &arr);
 
+void saveFakeDataToFile();
+
 #endif

@@ -93,3 +93,20 @@ void loadFromFile(vector<Animal> &arr) {
         cout << RED << "Error occurred while reading from file." << RESET << endl;
     }
 }
+
+void saveFakeDataToFile(){
+    vector<Animal> fakeAnimals = {
+        {1, "Leo", 5, "savannah", "lion", 190.5, "2022-01-15 09:30:00"},
+        {2, "Stripes", 3, "jungle", "tiger", 220.3, "2021-11-20 14:45:00"},
+        {3, "Spot", 4, "savannah", "cheetah", 150.0, "2023-03-10 11:20:00"},
+        {4, "Manny", 10, "tundra", "mammoth", 600.0, "2020-05-25 11:20:00"},
+        {5, "Ellie", 8, "savannah", "elephant", 500.0, "2019-07-30 11:20:00"},
+        {6, "Zara", 2, "desert", "zebra", 300.0, "2023-06-01 11:20:00"},
+        {7, "Rex", 6, "jungle", "leopard", 180.0, "2021-09-12 11:20:00"},
+        {8, "Coco", 1, "rainforest", "parrot", 1.5, "2024-02-14 11:20:00"},
+        {9, "Gerry", 7, "savannah", "giraffe", 800.0, "2018-12-05 11:20:00"},
+        {10, "Hippie", 9, "swamp", "hippopotamus", 900.0, "2017-08-22 11:20:00"}
+    };
+
+    saveToFile(fakeAnimals);
+}
