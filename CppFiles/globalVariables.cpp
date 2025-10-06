@@ -1,5 +1,8 @@
 #include <iostream>
+#include <string>
+#include <vector>
 #include "../HppFiles/globalVariables.hpp"
+#include "../HppFiles/structs.hpp"
 
 using namespace std;
 
@@ -130,4 +133,4 @@ string validRaces[] = {
     "panda"
 };
 
-int animalCount = 0;
+vector<Animal> animals;

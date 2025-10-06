@@ -2,6 +2,7 @@
 #define STRUCTS_HPP
 #include <string>
 
+
 using namespace std;
 
 typedef struct {

@@ -5,6 +5,7 @@
 #include "../HppFiles/constants.hpp"
 #include "../HppFiles/globalVariables.hpp"
 #include "../HppFiles/enums.hpp"
+#include "../HppFiles/inputValidations.hpp"
 
 using namespace std;
 

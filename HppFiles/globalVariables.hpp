@@ -1,6 +1,8 @@
 #ifndef GLOBALVARIABLES_HPP
 #define GLOBALVARIABLES_HPP
 #include <string>
+#include <vector>
+#include "structs.hpp"
 
 using namespace std;
 
@@ -22,6 +24,6 @@ extern string validHabitats[];
 
 extern string validRaces[];
 
-extern int animalCount;
+extern vector<Animal> animals;
 
 #endif

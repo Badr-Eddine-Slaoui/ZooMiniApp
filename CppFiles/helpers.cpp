@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include <limits>
 #include <regex>
 #include <ctime>
@@ -39,21 +40,6 @@ void handleGetline(const string &prompt, string &input) {
     } while (input.empty());
 }
 
-template <typename T>
-void handleInputNumber(const string &prompt, T &var) {
-    while (true) {
-        cout << CYAN << prompt << RESET;
-        cin >> var;
-        if (cin.fail()) {
-            clearInputBuffer();
-            cout << YELLOW << "Invalid input. Please enter a valid number." << RESET << endl;
-        } else {
-            clearInputBuffer();
-            break;
-        }
-    }
-}
-
 void setCurrentDate(string &date) {
     auto now = chrono::system_clock::now();
     time_t now_c = chrono::system_clock::to_time_t(now);
@@ -76,14 +62,14 @@ void displayAnimal(const Animal animal, const int index) {
     cout << "------------------------" << endl;
 }
 
-void displayAnimals(const Animal animals[]) {
-    if (animalCount == 0){
+void displayAnimals(const vector<Animal> animals) {
+    if (animals.empty()) {
         cout << ORANGE << "No animals to display." << RESET << endl;
         return;
     }
     
 
-    for (int i = 0; i < animalCount; i++) {
+    for (int i = 0; i < animals.size(); i++) {
         displayAnimal(animals[i], i + 1);
     }
 } 

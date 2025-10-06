@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include <fstream>
 #include "../HppFiles/fileHandlers.hpp"
 #include "../HppFiles/constants.hpp"
@@ -6,15 +7,17 @@
 
 using namespace std;
 
-void saveToFile(const Animal arr[]) {
+void saveToFile(const vector<Animal> &arr) {
     ofstream file("../Data/animals.dat", ios::binary);
     if (!file) {
         cout << RED << "Error opening file for writing." << RESET << endl;
         return;
     }
-    file.write(reinterpret_cast<const char*>(&animalCount), sizeof(int));
 
-    for (int i = 0; i < animalCount; i++) {
+    int animalCount = arr.size();
+    file.write(reinterpret_cast<const char*>(&animalCount), sizeof(animalCount));
+
+    for (int i = 0; i < arr.size(); i++) {
         file.write(reinterpret_cast<const char*>(&arr[i].id), sizeof(arr[i].id));
         size_t nameLen = arr[i].name.size();
         file.write(reinterpret_cast<const char*>(&nameLen), sizeof(nameLen));
@@ -41,14 +44,25 @@ void saveToFile(const Animal arr[]) {
     }
 }
 
-void loadFromFile(Animal arr[]) {
+void loadFromFile(vector<Animal> &arr) {
     ifstream file("../Data/animals.dat", ios::binary);
     if (!file) {
         cout << RED << "Error opening file for reading." << RESET << endl;
         return;
     }
 
-    file.read(reinterpret_cast<char*>(&animalCount), sizeof(int));
+    int animalCount = 0;
+    file.read(reinterpret_cast<char*>(&animalCount), sizeof(animalCount));
+
+    if (animalCount <= 0) {
+        arr.clear();
+        cout << YELLOW << "No animals found in file." << RESET << endl;
+        file.close();
+        return;
+    }
+
+    arr.resize(animalCount);
+
     for (int i = 0; i < animalCount; i++) {
         file.read(reinterpret_cast<char*>(&arr[i].id), sizeof(arr[i].id));
         size_t nameLen = 0;
@@ -74,7 +88,7 @@ void loadFromFile(Animal arr[]) {
     file.close();
 
     if (file.good()) {
-        cout << GREEN << "Data loaded successfully." << RESET << endl;
+        cout << GREEN << "Data loaded successfully. Loaded " << animalCount << " animals." << RESET << endl;
     } else {
         cout << RED << "Error occurred while reading from file." << RESET << endl;
     }
