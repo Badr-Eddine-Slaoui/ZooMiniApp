@@ -12,7 +12,7 @@ void saveToFile(const Animal arr[]) {
         cout << RED << "Error opening file for writing." << RESET << endl;
         return;
     }
-    file.write(reinterpret_cast<const char*>(animalCount), sizeof(int));
+    file.write(reinterpret_cast<const char*>(&animalCount), sizeof(int));
 
     for (int i = 0; i < animalCount; i++) {
         file.write(reinterpret_cast<const char*>(&arr[i].id), sizeof(arr[i].id));
