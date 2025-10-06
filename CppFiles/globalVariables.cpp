@@ -68,15 +68,15 @@ vector<string> searchMenu = {
 
 vector<string> statisticsMenu = {
     "=== Statistics Menu ===",
-    "Count of animals",
-    "Average age of animals",
-    "Average weight of animals",
-    "Count of animals by habitat",
-    "Count of animals by race",
-    "Oldest animal",
-    "Youngest animal",
-    "Heaviest animal",
-    "Lightest animal",
+    "Display animals count",
+    "display average age of animals",
+    "display average weight of animals",
+    "display count of animals by habitat",
+    "display count of animals by race",
+    "display the oldest animal",
+    "display the youngest animal",
+    "display the heaviest animal",
+    "display the lightest animal",
     "Return to Main Menu"
 };
 
