@@ -6,7 +6,7 @@
 
 using namespace std;
 
-string mainMenu[] = {
+vector<string> mainMenu = {
     "=== Zoo Management System ===",
     "Add an animal",
     "Display animals",
@@ -18,14 +18,14 @@ string mainMenu[] = {
     "Exit"
 };
 
-string addMenu[] = {
+vector<string> addMenu = {
     "=== Add Animal Menu ===",
     "Add one animal",
     "Add multiple animals",
     "Return to Main Menu"
 };
 
-string displayMenu[] = {
+vector<string> displayMenu = {
     "=== Display Animals Menu ===",
     "Display all animals",
     "Display animals by habitat",
@@ -33,7 +33,7 @@ string displayMenu[] = {
     "Return to Main Menu"
 };
 
-string sortMenu[] = {
+vector<string> sortMenu = {
     "=== Sort Animals Menu ===",
     "Sort by name",
     "Sort by age",
@@ -43,7 +43,7 @@ string sortMenu[] = {
     "Return to Main Menu"
 };
 
-string updateMenu[] = {
+vector<string> updateMenu = {
     "=== Update Animal Menu ===",
     "Update animal name",
     "Update animal age",
@@ -53,7 +53,7 @@ string updateMenu[] = {
     "Return to Main Menu"
 };
 
-string searchMenu[] = {
+vector<string> searchMenu = {
     "=== Search Animals Menu ===",
     "Search by ID",
     "Search by name",
@@ -66,7 +66,7 @@ string searchMenu[] = {
     "Return to Main Menu"
 };
 
-string statisticsMenu[] = {
+vector<string> statisticsMenu = {
     "=== Statistics Menu ===",
     "Count of animals",
     "Average age of animals",
@@ -80,7 +80,7 @@ string statisticsMenu[] = {
     "Return to Main Menu"
 };
 
-string validHabitats[] = {
+vector<string> validHabitats = {
     "savannah",
     "desert",
     "rainforest",
@@ -94,7 +94,7 @@ string validHabitats[] = {
     "polar"
 };
 
-string validRaces[] = {
+vector<string> validRaces = {
     "lion",
     "tiger",
     "cheetah",

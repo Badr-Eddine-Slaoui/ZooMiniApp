@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include "../HppFiles/helpers.hpp"
 #include "../HppFiles/structs.hpp"
 #include "../HppFiles/constants.hpp"
@@ -9,12 +10,12 @@
 
 using namespace std;
 
-void isValid(const string &prompt, string validList[], int listSize, string &var) {
+void isValid(const string &prompt, vector<string> validList, string &var) {
     bool valid = false;
     do {
         handleGetline(prompt, var);
 
-        for (int i = 0; i < listSize; i++) {
+        for (int i = 0; i < validList.size(); i++) {
             if (var == validList[i]) {
                 valid = true;
                 break;

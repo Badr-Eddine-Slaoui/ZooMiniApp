@@ -19,9 +19,9 @@ void clearInputBuffer() {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
-void printMenu(string menu[], int size) {
+void printMenu(vector<string> menu) {
     cout << RED << menu[0] << RESET << endl;
-    for (int i = 1; i <= size; i++) {
+    for (int i = 1; i <= menu.size(); i++) {
         cout << "Enter " << i << " to " << menu[i] << endl;
     }
 }

@@ -28,9 +28,9 @@ void addAnimal(vector<Animal> &animals, int n) {
             handleInputNumber("Enter the animal's age (1-120): ", newAnimal.age);
         }while (!isValidAge(newAnimal.age));
 
-        isValid("Enter the animal's habitat (savannah, desert, rainforest, jungle, tundra, ocean, arctic, tropical, subtropical, temperate, polar): ", validHabitats, MAX_HABITATS, newAnimal.habitat);
-
-        isValid("Enter the animal's race (e.g., lion, tiger, bear, elephant, giraffe, zebra, kangaroo, panda, wolf, fox, deer, rabbit, monkey, chimpanzee, gorilla, orangutan, crocodile, alligator, snake, lizard, turtle, tortoise, eagle, hawk, falcon, owl, parrot, penguin): ", validRaces, MAX_RACES, newAnimal.race);
+        isValid("Enter the animal's habitat (e.g., savannah, desert, rainforest, jungle, tundra, ocean, arctic, tropical, subtropical, temperate, polar): ", validHabitats, newAnimal.habitat);
+        
+        isValid("Enter the animal's race (e.g., lion, tiger, cheetah, leopard, jaguar, cougar, panther, giraffe, zebra, rhinoceros, elephant, hippopotamus, crocodile, alligator, cobra, viper, python, snake, lizard, iguana, chameleon, lemur, monkey, gorilla, orangutan, baboon, armadillo, platypus, penguin, dolphin, shark, whale, otter, seal, polar bear, panda): ", validRaces, newAnimal.race);
 
         do {
             handleInputNumber("Enter the animal's weight (0.1kg-1000kg): ", newAnimal.weight);

@@ -6,23 +6,23 @@
 
 using namespace std;
 
-extern string mainMenu[];
+extern vector<string> mainMenu[];
 
-extern string addMenu[];
+extern vector<string> addMenu[];
 
-extern string displayMenu[];
+extern vector<string> displayMenu[];
 
-extern string sortMenu[];
+extern vector<string> sortMenu[];
 
-extern string updateMenu[];
+extern vector<string> updateMenu[];
 
-extern string searchMenu[];
+extern vector<string> searchMenu[];
 
-extern string statisticsMenu[];
+extern vector<string> statisticsMenu[];
 
-extern string validHabitats[];
+extern vector<string> validHabitats;
 
-extern string validRaces[];
+extern vector<string> validRaces;
 
 extern vector<Animal> animals;
 

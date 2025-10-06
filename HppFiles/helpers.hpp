@@ -9,7 +9,7 @@ using namespace std;
 
 void clearInputBuffer();
 
-void printMenu(string menu[], int size);
+void printMenu(vector<string> menu);
 
 void stringToLower(string &str);
 
