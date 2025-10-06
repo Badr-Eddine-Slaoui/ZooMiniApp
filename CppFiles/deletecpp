@@ -1,0 +1,41 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <ctime>
+#include "../HppFiles/delete.hpp"
+#include "../HppFiles/structs.hpp"
+#include "../HppFiles/enums.hpp"
+#include "../HppFiles/helpers.hpp"
+#include "../HppFiles/constants.hpp"
+#include "../HppFiles/globalVariables.hpp"
+#include "../HppFiles/inputValidations.hpp"
+#include "../HppFiles/fileHandlers.hpp"
+
+using namespace std;
+
+void deleteAnimal(vector<Animal> &animals) {
+    if (animals.empty()) {
+        cout << YELLOW << "No animals to delete." << RESET << endl;
+        return;
+    }
+
+    string confirmDelete;
+    long idToDelete;
+    handleInputNumber("Enter the ID of the animal to delete: ", idToDelete);
+
+    auto animalToDelete = find_if(animals.begin(), animals.end(), [idToDelete](const Animal &animal) { return animal.id == idToDelete; });
+
+    if (animalToDelete != animals.end()) {
+        cout << RED << "Are you sure you want to delete this animal? (y/n)" << RESET << endl;
+        isValid("Your choice: ", {"y", "n"}, confirmDelete);
+        if (confirmDelete == "y") {
+            animals.erase(animalToDelete);
+            cout << GREEN << "Animal deleted successfully!" << RESET << endl;
+            saveToFile(animals);
+        } else {
+            cout << ORANGE << "Deletion canceled." << RESET << endl;
+        }
+    } else {
+        cout << ORANGE << "Animal with ID " << idToDelete << " not found." << RESET << endl;
+    }
+}
